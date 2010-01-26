@@ -49,6 +49,17 @@ class UrlsControllerTest < ActionController::TestCase
     assert_nil assigns(:url_obj)
   end
 
+  test "get to show for an existing url should succeed" do
+    url = stub(:href => 'http://scvngr.com')
+    Url.expects(:find_by_encoded_id).with('999').returns(url)
+
+    get :show, 'id' => '999'
+
+    assert_response :success
+    assert_template 'show'
+    assert_equal url, assigns(:url_obj)
+  end
+
   test "get to redirect for an existant url should redirect to the appropriate href" do
     url = stub(:href => 'http://scvngr.com')
     Url.expects(:find_by_encoded_id).with('Ab123').returns(url)
