@@ -1,3 +1,5 @@
 %h1 Editing URL
 
+%a{:href => short_url(@url_obj)}
+  %h3&= short_url(@url_obj)
 = render :partial => 'form'
