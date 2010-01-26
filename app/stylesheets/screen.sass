@@ -65,7 +65,8 @@ body
   background-color: #fff
 
 #main-content
-  +full_width
+  +columns(10)
+  +pad(1,1)
 
 #content, #flashes
   +full_width
@@ -97,6 +98,9 @@ fieldset.labelled-input
     :padding .6em
     +border-radius(9px)
     +box-shadow(4px, 4px, 10px, #333)
+    background-color:  #eee
+    &.highlight
+      background-color: #ffffcd
   label, input[type=text]
     :font-size 1.5em
 
