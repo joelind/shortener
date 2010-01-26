@@ -1,6 +1,7 @@
 require 'base_62_encoder' unless Object.const_defined?('Base62Encoder')
 
 class Url < ActiveRecord::Base
+  attr_accessible :href
   validates_uniqueness_of :href, :case_sensitive => false
   validates_presence_of :href
   validate :href_is_valid, :if => :href?

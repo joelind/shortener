@@ -7,6 +7,7 @@ class UrlTest < ActiveSupport::TestCase
 
   should_allow_values_for :href, "http://www.foo.bar", "https://foo.bar"
   should_not_allow_values_for :href, "xxx", "123", "/aaa", "mailto:joelind@gmail.com"
+  should_allow_mass_assignment_of :href
 
   test "find_by_encoded_id method" do
     encoded_id = Url.encoder.encode(1234)
