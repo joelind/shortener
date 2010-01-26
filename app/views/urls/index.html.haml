@@ -6,23 +6,5 @@
 
 
 - paginated_section @urls do
-  %ul
-    - @urls.each do |url|
-      %li
-        %dl
-          %dt.original Original URL
-          %dd.original
-            %a{:href => url.href}&= url.href
-          %dt.created Added
-          %dd #{time_ago_in_words url.created_at} ago
-
-          %dt.short Short URL
-          %dd.short
-            %a.short{:href => short_url(url)}&= short_url(url)
-
-          %dt.details Details
-          %dd.details
-            %a.details{:href => url_for(url)} details
-
-
-
+  .url-list
+    = render :partial => @urls

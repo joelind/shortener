@@ -51,7 +51,7 @@ class UrlsControllerTest < ActionController::TestCase
 
   test "get to show for an existing url should succeed" do
     url = Url.new(:href => 'http://scvngr.com')
-    url.stubs(:id => 1)
+    url.stubs(:id => 1, :created_at => Time.now)
     Url.expects(:find_by_encoded_id).with('999').returns(url)
 
     get :show, 'id' => '999'

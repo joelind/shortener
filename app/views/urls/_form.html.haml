@@ -1,11 +1,13 @@
 - form_for @url_obj do |form|
   = form.error_messages
   %fieldset#href-input
-    = form.label :href, 'enter your long url'
+    %legend url
+    = form.label :href, 'a full url, like http://joe-is-awesome.com'
     = form.text_field :href
 
   %fieldset#taglist-input
-    = form.label :tag_list, 'enter a comma-separated list of tags'
+    %legend tags
+    = form.label :tag_list, 'a comma separated list of tags'
     = form.text_field :tag_list
 
   %fieldset.buttons

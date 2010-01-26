@@ -58,11 +58,10 @@
 
 body
   +susy
-  background-color: #666
+
 #page
   +container
   +sans-family
-  background-color: #fff
 
 #main-content
   +columns(10)
@@ -94,11 +93,14 @@ a
 
 =roundish
   :border none
-  +border-radius(9px)
+  +border-top-left-radius(12px)
+  +border-bottom-right-radius(12px)
   +box-shadow(4px, 4px, 10px, #333)
-  :background-color  #eee
+  :background-color  #fff
+  :background-color #ccccff
 
 fieldset.labels-inside
+  :position relative
   input[type=text]
     +roundish
     :color #111
@@ -110,9 +112,8 @@ fieldset.labels-inside
 
   label
     :position absolute
-    :margin
-      :top .7em
-      :left .6em
+    :bottom .6em
+    :left .6em
     :color #999
 
 div#page
@@ -132,3 +133,50 @@ div#page
             +roundish
             &:hover
               :background-color #ffffcd
+
+    &.index, &.show
+      dl.url
+        +columns(12)
+        +full
+        +roundish
+        :margin
+          :bottom 35px
+        :padding
+          :top 10px
+          :bottom 10px
+        .original
+        
+        dt
+          :display none
+        dd
+          &.short
+            +columns(8)
+            +alpha
+            a
+              :font-size 1em
+              :font-weight bold
+              :color black
+          &.added
+            +columns(4)
+            +omega
+            :text-align right
+            :font-size 85%
+            :color #555
+          &.tags
+            +alpha
+            +columns(10)
+            ul.tags
+              +inline-list
+              li
+                +box-shadow(1px, 1px, 2px, #555)
+                +border-radius(2px)
+                :margin-right 4px
+                :padding 2px
+                :line-height 20px
+                :background-color  #eee
+                :font-size 90%
+                
+          &.edit
+            +columns(2)
+            +omega
+            :text-align right

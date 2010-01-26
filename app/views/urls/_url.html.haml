@@ -1,0 +1,16 @@
+%dl.url
+  %dt Shortened URL
+  %dd.short
+    %a{:href => short_url(url), :title => url.href}
+      &= short_url(url)
+  %dt Added
+  %dd.added
+    added #{time_ago_in_words url.created_at} ago
+  %dt Tags
+  %dd.tags
+    %ul.tags
+      - url.tags.each do |tag|
+        %li&= tag.text
+  %dt Edit
+  %dd.edit 
+    %a{:href => edit_url_path(url)} edit
