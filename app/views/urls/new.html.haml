@@ -1,8 +1,3 @@
 %h1 Add a new URL
 
-- form_for @url_obj do |form|
-  = form.error_messages
-  = form.label :href, 'Enter your long url'
-  = form.text_field :href
-
-  = form.submit 'Save'
+= render :partial => 'form'

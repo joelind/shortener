@@ -1,0 +1,95 @@
+/*
+  Welcome to Susy. Use this file to define screen styles.
+  Import this file using the following HTML or equivalent:
+  <link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
+
+/* @group reset */
+@import compass/reset.sass
+/* @end */
+
+/* @group defaults */
+@import base.sass
+/* @end */
+
+
+/* @group STRUCTURE */
+
+
+
+/* @end */
+
+  
+/* @group COMPONENTS by type */
+
+
+
+/* @end */
+
+
+/* @group OVERRIDES by content */
+
+
+
+/* @end */
+
+        
+/* @group OVERRIDES by page */
+
+
+
+/* @end */
+
+
+/* @group DEBUG */
+
+/*   uncomment, adjust and use for debugging    */
+  
+/*
+  #page
+    +show-grid("grid.png")
+
+/* @end */
+@import compass/utilities.sass
+
+=full_width
+  +columns(10)
+  +pad(1,1)
+  +full
+
+body
+  +susy
+  background-color: #666
+#page
+  +container
+  +sans-family
+  background-color: #fff
+
+#main-content
+  +columns(8)
+  +suffix(1)
+  +omega
+
+#content, #flashes
+  +columns(8,8)
+  +alpha
+
+
+#header, #footer
+  +full_width
+  :height 3em
+  :margin
+    :bottom .5em
+    :top    .5em
+
+#header
+  .text
+    +columns(5,10)
+    +alpha(8)
+  .nav
+    +columns(5,10)
+    +omega(8)
+    :text-align right
+
+a
+  +unstyled-link
+  cursor: pointer

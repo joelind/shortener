@@ -1,0 +1,27 @@
+!!!
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html; charset=iso-8859-1", "http-equiv" => "Content-Type" }
+    %meta{ :name => "description", :content => "Short description of your site here." }
+    %meta{ :name => "keywords", :content => "keywords, go, here, seperated, by, commas" }
+
+    %title URL Shortener
+
+    = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
+  %body
+    #page{:class => page_class }
+      #header
+        .text
+          %a{:href => root_path}
+            %h1 Shortener
+      #left-nav
+      #main-content
+        #flash
+          = render 'shared/flashes'
+        #content 
+          = yield
+      #footer
+        &copy;2010 Joe Lind
+   
+    = javascript_include_tag 'jquery-1.3.2.js'
+    = javascript_include_tag 'application'

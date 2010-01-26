@@ -20,6 +20,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'haml', :version => '2.2.17'
+  config.gem 'compass', :version => '>= 0.8.17'
   config.gem 'will_paginate', :version => '2.3.11'
   config.gem "matthuhiggins-foreigner", :lib => "foreigner", :version => '0.3.1'
 
