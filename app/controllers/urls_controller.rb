@@ -5,7 +5,7 @@ class UrlsController < ApplicationController
   end
 
   def new
-    @url_obj = Url.new(:href => 'http://')
+    @url_obj = Url.new
   end
 
   def create

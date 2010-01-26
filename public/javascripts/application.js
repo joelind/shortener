@@ -1,2 +1,11 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(document).ready(function() {
+    $('input#url_href, input#url_tag_list').focus(function(){
+      $('label[for=' + this.id + ']').hide();
+    });
+    $('input#url_href, input#url_tag_list').blur(function(){
+      this.value = $.trim(this.value);
+      if(this.value=='')
+        $('label[for=' + this.id + ']').show();
+    });
+    $('input#url_href, input#url_tag_list').focus().blur();
+});
