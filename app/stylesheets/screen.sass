@@ -92,14 +92,17 @@ a
   +unstyled-link
   cursor: pointer
 
+=roundish
+  :border none
+  +border-radius(9px)
+  +box-shadow(4px, 4px, 10px, #333)
+  :background-color  #eee
+
 fieldset.labels-inside
   input[type=text]
+    +roundish
     :color #111
     :padding .6em
-    :border none
-    +border-radius(9px)
-    +box-shadow(4px, 4px, 10px, #333)
-    background-color:  #eee
     &.highlight
       background-color: #ffffcd
   label, input[type=text]
@@ -115,14 +118,17 @@ fieldset.labels-inside
 div#page
   &.urls
     form.edit_url, form.new_url
-      :padding
-        :left 20px
-        :right 20px
-        :top 10px
-        :bottom 10px
-      :border none
-      +border-radius(9px)
-      +box-shadow(4px, 4px, 10px, #333)
-
-
-
+      fieldset
+        &#href-input, &#taglist-input
+          +columns(12)
+          +omega
+        &.buttons
+          +columns(2)
+          +omega
+          input#url_submit
+            :cursor pointer
+            :width 100%
+            :font-size 1.5em
+            +roundish
+            &:hover
+              :background-color #ffffcd
