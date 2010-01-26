@@ -1,10 +1,12 @@
 require 'base_62_encoder' unless Object.const_defined?('Base62Encoder')
 
 class Url < ActiveRecord::Base
-  attr_accessible :href
+  attr_accessible :href, :tag_list
   validates_uniqueness_of :href, :case_sensitive => false
   validates_presence_of :href
   validate :href_is_valid, :if => :href?
+
+  has_many :tags
 
   def self.find_by_encoded_id(encoded_id)
     return nil if encoded_id.nil?
@@ -22,6 +24,19 @@ class Url < ActiveRecord::Base
 
   def to_param
     encoded_id
+  end
+
+  def tag_list
+    self.tags.map(&:text).join(', ')
+  end
+
+  def tag_list=(list)
+    list_items = list.split(',').map(&:strip)
+    self.tags.reject{|t| list_items.include? t.text}.map(&:destroy)
+    (list_items - self.tags.map(&:text)).uniq.each do |new_tag_text|
+      self.tags.build(:text => new_tag_text)
+    end
+    self.tag_list
   end
 
   private

@@ -6,7 +6,10 @@ redirects to
 
 %a{:href => @url_obj.href}&= @url_obj.href
 
-
 %a.edit{:href => edit_url_path(@url_obj)} edit
+
+%ul
+  - @url_obj.tags.each do |tag|
+    %li.tag&= tag.text
 
 %a{:href => root_path} back
