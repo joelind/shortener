@@ -7,4 +7,7 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  def error_404
+    render :file => "#{Rails.root}/public/404.html", :layout => false, :status => 404
+  end
 end
