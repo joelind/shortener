@@ -34,7 +34,7 @@ class Url < ActiveRecord::Base
     list_items = list.split(',').map(&:strip)
     self.tags.reject{|t| list_items.include? t.text}.map(&:destroy)
     (list_items - self.tags.map(&:text)).uniq.each do |new_tag_text|
-      self.tags.build(:text => new_tag_text)
+      self.tags.build(:text => new_tag_text, :url => self)
     end
     self.tag_list
   end
