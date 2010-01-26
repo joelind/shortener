@@ -92,10 +92,11 @@ a
   +unstyled-link
   cursor: pointer
 
-fieldset.labelled-input
+fieldset.labels-inside
   input[type=text]
     :color #111
     :padding .6em
+    :border none
     +border-radius(9px)
     +box-shadow(4px, 4px, 10px, #333)
     background-color:  #eee
@@ -107,6 +108,21 @@ fieldset.labelled-input
   label
     :position absolute
     :margin
-      :top .9em
+      :top .7em
       :left .6em
     :color #999
+
+div#page
+  &.urls
+    form.edit_url, form.new_url
+      :padding
+        :left 20px
+        :right 20px
+        :top 10px
+        :bottom 10px
+      :border none
+      +border-radius(9px)
+      +box-shadow(4px, 4px, 10px, #333)
+
+
+

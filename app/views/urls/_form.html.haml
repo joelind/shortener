@@ -1,10 +1,10 @@
 - form_for @url_obj do |form|
   = form.error_messages
-  %fieldset.labelled-input
+  %fieldset#href-input
     = form.label :href, 'enter your long url'
     = form.text_field :href
 
-  %fieldset.labelled-input
+  %fieldset#taglist-input
     = form.label :tag_list, 'enter a comma-separated list of tags'
     = form.text_field :tag_list
 
