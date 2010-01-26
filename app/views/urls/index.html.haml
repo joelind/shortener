@@ -1,0 +1,12 @@
+= page_entries_info @urls
+
+%a{:href => new_url_path} Add a new URL
+
+- paginated_section @urls do
+  %ul
+    - @urls.each do |url|
+      %li
+        %a{:href => url.href}&= url.href
+        %span.created-at
+          #{time_ago_in_words url.created_at} ago
+
