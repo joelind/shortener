@@ -1,5 +1,11 @@
 %h1 URL
 
+%a{:href => short_url(@url_obj)}&= short_url @url_obj
+
+redirects to
+
 %a{:href => @url_obj.href}&= @url_obj.href
 
-%a{:href => urls_path} back
+
+
+%a{:href => root_path} back
