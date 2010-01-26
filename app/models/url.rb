@@ -1,7 +1,7 @@
 class Url < ActiveRecord::Base
   validates_uniqueness_of :href, :case_sensitive => false
   validates_presence_of :href
-  validate :href_is_valid
+  validate :href_is_valid, :if => :href?
 
   private
   def href_is_valid
