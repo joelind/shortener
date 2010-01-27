@@ -24,6 +24,7 @@ class UrlsControllerTest < ActionController::TestCase
     post :create, 'url' => params
 
     assert_redirected_to :action => 'show', :id => stubbed_url.to_param
+    assert_equal "Congratulations, your url has been shortened", flash[:notice_good]
   end
 
   test "post to create when the url is not duplicated and save fails" do
@@ -109,6 +110,7 @@ class UrlsControllerTest < ActionController::TestCase
     put :update, 'id' => url.to_param, 'url' => params
 
     assert_redirected_to :action => 'show', :id => url.to_param
+    assert_equal "Congratulations, your url has been updated", flash[:notice_good]
   end
 
   test "put to update for a valid url that does not validate should render the edit action" do

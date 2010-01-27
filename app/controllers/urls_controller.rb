@@ -11,6 +11,7 @@ class UrlsController < ApplicationController
   def create
     @url_obj = Url.find_by_href(params['url']['href']) || Url.new(params['url'])
     if @url_obj.save
+      flash[:notice_good] = "Congratulations, your url has been shortened"
       return redirect_to :action => :show, :id => @url_obj.to_param
     else
       render :action => :new, :status => :unprocessable_entity
@@ -31,6 +32,7 @@ class UrlsController < ApplicationController
   def update
     @url_obj.update_attributes(params[:url])
     if @url_obj.save
+      flash[:notice_good] = "Congratulations, your url has been updated"
       return redirect_to :action => :show, :id => @url_obj.to_param
     else
       render :action => :edit, :status => :unprocessable_entity
