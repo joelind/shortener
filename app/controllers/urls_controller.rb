@@ -9,7 +9,7 @@ class UrlsController < ApplicationController
   end
 
   def create
-    @url_obj = Url.find_by_href(params['url']['href']) || Url.new(params['url'])
+    @url_obj = Url.new(params[:url])
     if @url_obj.save
       flash[:notice_good] = "Congratulations, your url has been shortened"
       return redirect_to :action => :show, :id => @url_obj.to_param

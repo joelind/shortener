@@ -14,11 +14,10 @@ class UrlsControllerTest < ActionController::TestCase
     assert_template 'new'
   end
 
-  test "post to create when the url is not duplicated and save succeeds" do
+  test "post to create when the save succeeds" do
     params = {'href' => 'http://www.foo.com'}
     stubbed_url = Url.new(params)
     stubbed_url.stubs(:save => true, :id => 10)
-    Url.expects(:find_by_href).with(params['href']).returns(nil)
     Url.expects(:new).with(params).returns(stubbed_url)
 
     post :create, 'url' => params
@@ -27,11 +26,10 @@ class UrlsControllerTest < ActionController::TestCase
     assert_equal "Congratulations, your url has been shortened", flash[:notice_good]
   end
 
-  test "post to create when the url is not duplicated and save fails" do
+  test "post to create when save fails" do
     params = {'href' => 'http://www.foo.com'}
     stubbed_url = Url.new(params)
     stubbed_url.stubs(:save => false, :id => 10)
-    Url.expects(:find_by_href).with(params['href']).returns(nil)
     Url.expects(:new).with(params).returns(stubbed_url)
 
     post :create, 'url' => params
