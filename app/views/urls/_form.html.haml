@@ -3,12 +3,12 @@
   %fieldset#href-input
     %legend url
     = form.label :href, 'a full url, like http://joe-is-awesome.com'
-    = form.text_field :href
+    = form.text_field :href, :autocomplete => 'off'
 
   %fieldset#taglist-input
     %legend tags
     = form.label :tag_list, 'a comma separated list of tags'
-    = form.text_field :tag_list
+    = form.text_field :tag_list, :autocomplete => 'off'
 
   %fieldset.buttons
     = form.submit 'Save'
