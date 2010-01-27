@@ -1,10 +1,12 @@
-.add-new
+#add-link
   %a{:href => new_url_path}
-    add a new URL
+    add a url
 
-= page_entries_info @urls
+#page-info
+  = page_entries_info @urls
+= will_paginate @urls, :page_links => false, :separator =>' | '
 
 
-- paginated_section @urls do
-  .url-list
-    = render :partial => @urls
+
+.url-list
+  = render :partial => @urls

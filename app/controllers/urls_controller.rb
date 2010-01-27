@@ -1,7 +1,7 @@
 class UrlsController < ApplicationController
   before_filter :find_url, :only => [:show, :edit, :redirect, :update]
   def index
-    @urls = Url.paginate(:page => params[:page], :per_page => 25, :order => 'created_at desc')
+    @urls = Url.paginate(:include => :tags, :page => params[:page], :per_page => 25, :order => 'created_at desc')
   end
 
   def new

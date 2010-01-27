@@ -76,7 +76,7 @@ body
   :height 3em
   :margin
     :bottom .5em
-    :top    .5em
+    :top    2em
 
 #header
   .text
@@ -156,6 +156,27 @@ div#page
               :background-color #ffffcd
 
     &.index, &.show
+      #add-link
+        +full
+        +columns(12)
+        :text-align right
+        :margin-bottom 15px
+        a
+          :padding 5px
+          :font-size 18px
+          +border-radius(2px)
+          +box-shadow(1px, 1px, 2px, #555)
+          &:hover
+            :background-color #ffffcd
+
+      #page-info
+        +alpha
+        +columns(6)
+      .pagination
+        +omega
+        +columns(6)
+        :text-align right
+        :margin-bottom 25px
       dl.url
         +columns(12)
         +full

@@ -67,7 +67,7 @@ $(document).ready(function() {
 
     $('#tag-autocompleter a').live('click', function(event){
         var tagList = $('input#url_tag_list')[0].value;
-        tagList = tagList.replace(new RegExp(lastSearchedTag + '$'), $(this).text());
+        tagList = tagList.replace(new RegExp(lastSearchedTag + '$', 'i'), $(this).text());
         $('input#url_tag_list')[0].value = tagList;
         getAutocompleter().hide();
         $($('input#url_tag_list')[0]).focus();
