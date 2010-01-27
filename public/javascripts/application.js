@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    /* Begin code to deal with showing/hiding labels inside text elements */
     $('input#url_href, input#url_tag_list').focus(function(){
       this.value = $.trim(this.value);
       $(this).addClass('highlight');
@@ -10,7 +11,7 @@ $(document).ready(function() {
         this.value = 'http://'
     });
     $('input#url_href, input#url_tag_list').blur(function(){
-      setTimeout("$($('div#tag-autocompleter')[0]).hide()", 10);
+      setTimeout("$($('div#tag-autocompleter')[0]).hide()", 50);
       $(this).removeClass('highlight');
       this.value = $.trim(this.value);
       if(this.value == 'http://' || this.value=='https://')
@@ -22,6 +23,8 @@ $(document).ready(function() {
     $('fieldset#href-input, fieldset#taglist-input').addClass('labels-inside');
     $('input#url_href, input#url_tag_list').focus().blur();
 
+
+    /* Begin code to deal with autocompleter */
     var lastSearchedTag = '';
     var tagSearches = {}; /* let's cache these */
     $('input#url_tag_list').keyup(function(){

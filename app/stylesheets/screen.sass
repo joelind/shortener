@@ -135,6 +135,7 @@ div#page
           +columns(12)
           +omega
         &.buttons
+          +prefix(10)
           +columns(2)
           +omega
           input#url_submit
@@ -142,6 +143,8 @@ div#page
             :width 100%
             :font-size 1.5em
             +roundish
+            :background-color orange
+            :color #666
             &:hover
               :background-color #ffffcd
         #tag-autocompleter
@@ -156,19 +159,6 @@ div#page
               :background-color #ffffcd
 
     &.index, &.show
-      #add-link
-        +full
-        +columns(12)
-        :text-align right
-        :margin-bottom 15px
-        a
-          :padding 5px
-          :font-size 18px
-          +border-radius(2px)
-          +box-shadow(1px, 1px, 2px, #555)
-          &:hover
-            :background-color #ffffcd
-
       #page-info
         +alpha
         +columns(6)

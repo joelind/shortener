@@ -2,4 +2,4 @@
 
 %a{:href => short_url(@url_obj)}
   %h3&= short_url(@url_obj)
-= render :partial => 'form'
+= render :partial => 'form', :locals => {:url_obj => @url_obj }

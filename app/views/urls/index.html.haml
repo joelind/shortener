@@ -1,6 +1,4 @@
-#add-link
-  %a{:href => new_url_path}
-    add a url
+= render :partial => 'form', :locals => {:url_obj => Url.new}
 
 #page-info
   = page_entries_info @urls
