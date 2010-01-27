@@ -43,7 +43,7 @@ class Url < ActiveRecord::Base
   def href_is_valid
     begin
       uri = URI.parse(self.href)
-      self.errors.add(:href, "is invalid") unless ['http', 'https'].include?(uri.scheme)
+      self.errors.add(:href, "must be a valid url starting with 'http://' or 'https://'") unless ['http', 'https'].include?(uri.scheme)
     rescue URI::InvalidURIError => e
       self.errors.add(:href, "is invalid")
     end
