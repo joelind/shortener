@@ -99,6 +99,17 @@ a
   :background-color  #fff
   :background-color #ccccff
 
+=list-of-tags
+  +inline-list
+  li
+    +box-shadow(1px, 1px, 2px, #555)
+    +border-radius(2px)
+    :margin-right 4px
+    :padding 2px
+    :line-height 20px
+    :background-color  #eee
+    :font-size 90%
+
 fieldset.labels-inside
   :position relative
   input[type=text]
@@ -133,6 +144,16 @@ div#page
             +roundish
             &:hover
               :background-color #ffffcd
+        #tag-autocompleter
+          :position absolute
+          +columns(12)
+          +omega
+          :top 70px 
+          :left 0
+          ul
+            +list-of-tags
+            li:hover
+              :background-color #ffffcd
 
     &.index, &.show
       dl.url
@@ -166,15 +187,7 @@ div#page
             +alpha
             +columns(10)
             ul.tags
-              +inline-list
-              li
-                +box-shadow(1px, 1px, 2px, #555)
-                +border-radius(2px)
-                :margin-right 4px
-                :padding 2px
-                :line-height 20px
-                :background-color  #eee
-                :font-size 90%
+              +list-of-tags
                 
           &.edit
             +columns(2)

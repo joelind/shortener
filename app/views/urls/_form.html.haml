@@ -9,6 +9,8 @@
     %legend tags
     = form.label :tag_list, 'a comma separated list of tags'
     = form.text_field :tag_list, :autocomplete => 'off'
+    #tag-autocompleter
+      %ul
 
   %fieldset.buttons
     = form.submit 'Save'
