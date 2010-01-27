@@ -9,5 +9,5 @@ class Tag < ActiveRecord::Base
       :conditions => ["upper(text) like upper(?)", "%#{text}%"]
     }
   }
-  named_scope :text_only, { :select => 'text' }
+  named_scope :text_only, { :select => 'distinct text' }
 end
